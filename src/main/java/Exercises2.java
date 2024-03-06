@@ -66,22 +66,7 @@ public class Exercises2 {
             ans.add(LastNum);
             return ans;
         }
-        int[] LastNum = new int[s - 1];
-        for(int i = 0; i < s - 1; i++)
-            LastNum[i] = nums[i];
-        ans = permute(LastNum);
-        int sz = ans.size();
-        for(int i = 0; i < sz; i++)
-        {
-            ans.get(i).add(nums[s - 1]);
-            for(int j = s - 2; j >= 0; j--)
-            {
-                ans.add(ans.get(i));
-                int tmp = ans.get(i).get(j);
-                ans.get(i).set(j, ans.get(i).get(j + 1));
-                ans.get(i).set(j + 1, tmp);
-            }
-        }
+
         return ans;
     }
 
